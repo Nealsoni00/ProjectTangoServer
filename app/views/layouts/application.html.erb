@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<% if current_user %>
+    <%= link_to 'Log Out', '/logout' %>
+<% else %>
+    <%= link_to 'Yale sign in', '/auth/cas' %>
+<% end %>
+
 <%= yield %>
 
 </body>
