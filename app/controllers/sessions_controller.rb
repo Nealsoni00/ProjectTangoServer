@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
 
-    puts(request.env['omniauth.auth'])
+    puts(request.env['omniauth.auth'].inspect)
 
     # begin
     #   user = User.from_omniauth(request.env['omniauth.auth'])
@@ -21,7 +21,8 @@ class SessionsController < ApplicationController
     #   flash[:warning] = 'Error trying to authenticate you'
     # end
     #
-    # redirect_to root_path
+
+    redirect_to root_path
   end
 
   def destroy

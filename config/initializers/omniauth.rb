@@ -1,6 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :cas, ENV['CAS_CLIENT_ID'], ENV['CAS_CLIENT_SECRET'],
-           host: 'secure.its.yale.edu/cas/'
+  provider :cas,
+           host: 'secure.its.yale.edu', login_url: '/cas/login', service_validate_url: '/cas/serviceValidate'
 end
 
 OmniAuth.config.on_failure = Proc.new do |env|
